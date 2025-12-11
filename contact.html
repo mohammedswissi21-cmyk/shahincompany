@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشاهين | اتصل بنا</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* التنسيقات الخاصة بصفحة الاتصال */
+        .contact-section {
+            padding: 50px 0;
+        }
+        .contact-layout {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .contact-info {
+            flex: 1 1 300px;
+            background-color: var(--secondary-color);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form {
+            flex: 2 1 400px;
+            background-color: var(--light-text);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* تنسيق نموذج الاتصال */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--dark-text);
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            box-sizing: border-box;
+            background-color: var(--secondary-color);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        /* تنسيق الأزرار */
+        .btn-custom {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 12px 30px;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        .btn-custom:hover { background-color: #5B7252; }
+
+        .info-item {
+            margin-bottom: 25px;
+            color: var(--dark-text);
+        }
+        .info-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        .info-item p {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .contact-layout {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="./assets/images/logo.jpg" alt="شعار الشاهين" class="logo-img">
+                <span style="color: #E59C09;">
+                    الشاهين
+                </span>
+            </a> 
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" >الرئيسية</a></li>
+                <li><a href="market.html">السوق</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="contact.html" class="active">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="contact-section">
+        <div class="container">
+            <h2 class="section-title">نحن هنا للمساعدة</h2>
+
+            <div class="contact-layout">
+                
+                <section class="contact-form">
+                    <h3>أرسل لنا رسالة</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">الموضوع</label>
+                            <input type="text" id="subject" name="subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">الرسالة</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-custom">إرسال الرسالة</button>
+                    </form>
+                </section>
+                
+                <aside class="contact-info">
+                    <h3>معلومات التواصل المباشر</h3>
+                    <div class="info-item">
+                        <h4>الموقع (افتراضي)</h4>
+                        <p>قرجي-سيمافرو التضامن بجانب مصرف الجمهورية, Tripoli, Libya, shahincompany27@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>البريد الإلكتروني</h4>
+                        <p style="direction:ltr">info@shahincompany.ly</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>الهاتف</h4>
+                        <p style="direction:ltr">+218 091-0528989</p>
+                    </div>
+                    <iframe
+                        src="https://maps.google.com/maps?q=Jumhoria%20Bank%20-%20Gurji%20agency,%20V46G+R6R,%20Tripoli,%20Libya&z=15&output=embed" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        >
+                </iframe>
+                </aside>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>الشاهين</h4> 
+                    <p>أناقتك هنا تجدها لدى شاهين - الوجهة المثالية للزي الليبي العربي الأصيل.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="market.html">تسوق الآن</a></li>
+                        <li><a href="about.html">قصتنا</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <p style="direction:rtl">info@shahincompany.ly</p>
+                    <p style="direction:ltr; text-align: right">+218 091-0528989</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>تابعنا</h4>
+                    <ul class="social-text-links">
+                        <li><a href="https://www.facebook.com/profile.php?id=61557039238831" target="_blank">فيسبوك</a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank">إنستغرام</a></li>
+                        <li><a href="https://www.tiktok.com/" target="_blank">تيك توك</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="currentYear"></span> الشاهين للزي الليبي العربي. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

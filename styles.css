@@ -1,0 +1,248 @@
+/* =================================== */
+/* 0. إعادة تعيين وضبط الاتجاه (RTL) */
+/* =================================== */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+:root {
+    --primary-color: #4c82ac;        /* الأزرق المتوسط (اللون المميز/الرئيسي) */
+    --secondary-color: #F3EEE4;      /* حجر الرمل الفاتح (الخلفية الفاتحة) */
+    --dark-text: #333333;            /* أسود/رمادي داكن للنص لضمان الوضوح */
+    --deep-bg: #414444;              /* الداكن للخلفيات (شريط التنقل والتذييل) */
+    --light-text: #FFFFFF;           /* لضمان النص الأبيض */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--dark-text);
+    direction: rtl; /* ضبط الاتجاه من اليمين لليسار */
+    line-height: 1.6;
+}
+
+/* التنسيقات العامة */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--dark-text);
+    font-size: 2.5rem;
+    border-bottom: 3px solid var(--primary-color); 
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 40px;
+}
+
+/* =================================== */
+/* 1. شريط التنقل (Navbar) */
+/* =================================== */
+.navbar {
+    background-color: var(--deep-bg); 
+    color: var(--light-text);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color); 
+    text-decoration: none;
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    line-height: 1; 
+}
+
+.logo-img {
+    height: 40px; 
+    width: auto;
+    display: block;
+    max-width: 100%;
+    margin: 0; 
+} 
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--light-text); 
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 4px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color); 
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color); 
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* =================================== */
+/* 2. التذييل (Footer) - التنسيق العام */
+/* =================================== */
+.footer {
+    background-color: var(--deep-bg); 
+    color: var(--secondary-color);
+    padding: 40px 0 20px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1 1 200px; 
+}
+
+.footer-section h4 {
+    color: var(--primary-color); 
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    line-height: 2.5;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: var(--primary-color); 
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+}
+
+/* تنسيق روابط التواصل النصية (خارج الـ Media Query) */
+.footer-section .social-text-links {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section .social-text-links li a {
+    color: var(--secondary-color); 
+    text-decoration: none;
+    display: block; 
+    line-height: 2.5; 
+    transition: color 0.3s;
+}
+
+.footer-section .social-text-links li a:hover {
+    color: var(--primary-color); 
+}
+
+
+/* =================================== */
+/* 3. التجاوب (Media Queries) - التعديلات الخاصة بالشاشات الصغيرة فقط */
+/* =================================== */
+@media (max-width: 768px) {
+    /* 1. قائمة التنقل (الهامبرغر) */
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; 
+        right: 0;
+        background-color: var(--deep-bg);
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        padding-bottom: 10px;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        margin-right: 0;
+        text-align: right;
+        /* تباعد القائمة في وضع الهاتف */
+        padding: 15px 20px; 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* 2. التذييل في وضع الهاتف */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* 3. تنسيقات خاصة ببطاقات المنتجات (للتجاوب) */
+    .product-info {
+        padding: 20px;
+    }
+
+    .product-info p {
+        color: var(--dark-text); /* تم تعديله ليتوافق مع var(--dark-text) */
+        font-weight: 400;
+        font-style: italic;
+        margin-bottom: 0; 
+        font-size: 1rem;
+    }
+
+    .product-card.view-more {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--secondary-color);
+    }
+}

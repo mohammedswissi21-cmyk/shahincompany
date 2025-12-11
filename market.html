@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشاهين | السوق</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ... (تنسيقات السوق كما هي) ... */
+        .marketplace {
+            padding: 50px 0;
+        }
+        .market-layout {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .sidebar {
+            flex: 0 0 250px;
+            background-color: var(--light-text);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .product-list {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* تنسيق بطاقة المنتج (مماثل للصفحة الرئيسية) */
+        .product-card {
+            background-color: var(--light-text);
+            border: 1px solid var(--secondary-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .product-info {
+            padding: 15px;
+        }
+        .product-info h3 {
+            color: var(--dark-text);
+            margin-bottom: 8px;
+        }
+        .product-info p {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* تنسيق عناصر التصفية */
+        .sidebar h4 {
+            color: var(--dark-text);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .filter-group {
+            margin-bottom: 20px;
+        }
+        .filter-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 700;
+            color: var(--dark-text);
+        }
+        .filter-group select, .filter-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .btn-custom {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 10px 25px;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        .btn-custom:hover { background-color: #5B7252; }
+
+        /* التجاوب الخاص بالسوق */
+        @media (max-width: 900px) {
+            .market-layout {
+                flex-direction: column;
+            }
+            .sidebar {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="./assets/images/logo.jpg" alt="شعار الشاهين" class="logo-img">
+                <span style="color: #E59C09;">
+                    الشاهين
+                </span>
+            </a> 
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" >الرئيسية</a></li>
+                <li><a href="market.html" class="active">السوق</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="marketplace">
+        <div class="container">
+            <h2 class="section-title">عروض الشاهين</h2> <div class="market-layout">
+                
+
+                
+                <section class="product-list">
+
+                    <div class="product-card">
+                        <img src="./assets/market/p4.jpg" alt="">
+                        <div class="product-info">
+                            <h3>بدلة رقم 1</h3>
+                            <p>999.00 دينار</p>
+                            
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/market/p5.jpg" alt="">
+                        <div class="product-info">
+                            <h3>بدلة رقم 2</h3>
+                            <p>999.00 دينار</p>
+                            
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/market/p9.jpg" alt="">
+                        <div class="product-info">
+                            <h3>بدلة رقم 3</h3>
+                            <p>999.00 دينار</p>
+                            
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/market/p6.jpg" alt="">
+                        <div class="product-info">
+                            <h3>فرملة رقم 1</h3>
+                            <p>999.00 دينار</p>
+                            
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/market/p7.jpg" alt="">
+                        <div class="product-info">
+                            <h3>فرملة رقم 2</h3>
+                            <p>999.00 دينار</p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="./assets/market/p8.jpg" alt="">
+                        <div class="product-info">
+                            <h3>فرملة رقم 3</h3>
+                            <p>999.00 دينار</p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="./assets/market/p10.jpg" alt="">
+                        <div class="product-info">
+                            <h3>فرملة رقم 4</h3>
+                            <p>999.00 دينار</p>
+                            
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/market/p11.jpg" alt="">
+                        <div class="product-info">
+                            <h3>فرملة رقم 5</h3>
+                            <p>999.00 دينار</p>
+                            
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/market/p12.jpg" alt="">
+                        <div class="product-info">
+                            <h3>فرملة رقم 6</h3>
+                            <p>999.00 دينار</p>
+                            
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="./assets/market/p1.jpg" alt="">
+                        <div class="product-info">
+                            <h3>حذاء رقم 1</h3>
+                            <p>999.00 دينار</p>
+                            
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/market/p2.jpg" alt="">
+                        <div class="product-info">
+                            <h3>حذاء رقم 2</h3>
+                            <p>999.00 دينار</p>
+                            
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="./assets/market/p3.jpg" alt="">
+                        <div class="product-info">
+                            <h3>حذاء رقم 3</h3>
+                            <p>999.00 دينار</p>
+                        </div>
+                    </div>
+
+                </section>
+
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>الشاهين</h4> 
+                    <p>أناقتك هنا تجدها لدى شاهين - الوجهة المثالية للزي الليبي العربي الأصيل.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="market.html">تسوق الآن</a></li>
+                        <li><a href="about.html">قصتنا</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <p style="direction:rtl">info@shahincompany.ly</p>
+                    <p style="direction:ltr; text-align: right">+218 091-0528989</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>تابعنا</h4>
+                    <ul class="social-text-links">
+                        <li><a href="https://www.facebook.com/profile.php?id=61557039238831" target="_blank">فيسبوك</a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank">إنستغرام</a></li>
+                        <li><a href="https://www.tiktok.com/" target="_blank">تيك توك</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="currentYear"></span> الشاهين للزي الليبي العربي. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // منطق قائمة التنقل المتجاوبة (Responsive Navbar Logic)
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

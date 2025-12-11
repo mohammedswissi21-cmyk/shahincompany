@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشاهين | الرئيسية</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="main.css"> 
+    <style>
+        /* ... (التنسيقات الخاصة بالصفحة الرئيسية - لا تغييرات وظيفية) ... */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-text h1 { animation: fadeInDown 1s ease-out; }
+        .hero-text p { animation: fadeInDown 1.2s ease-out; }
+
+        /* تنسيق الأزرار المشتركة */
+        .btn-custom {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 10px 25px;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-custom:hover {
+            /* لون الـ Hover: تدرج أغمق قليلاً من #183FA6 (تم اختيار #102B85 كمتغير أزرق داكن) */
+            background-color: #102B85; 
+            transform: scale(1.05);
+        }
+
+        /* تنسيق عرض الشرائح */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            height: 80vh; 
+        }
+        .mySlides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slide-overlay {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .hero-text {
+            color: var(--light-text);
+            padding: 20px;
+        }
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+        .hero-text p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        /* قسم المنتجات المميزة */
+        .featured-products {
+            padding: 50px 0;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .product-card {
+            background-color: var(--light-text);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            opacity: 0; 
+            transform: translateY(20px);
+        }
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        .product-info {
+            padding: 20px;
+        }
+        .product-info h3 {
+            color: var(--dark-text);
+            margin-bottom: 10px;
+        }
+        .product-info p {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        @media (max-width: 600px) {
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-text p { font-size: 1.2rem; }
+            .slideshow-container { height: 60vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="./assets/images/logo.jpg" alt="شعار الشاهين" class="logo-img">
+                <span style="color: #E59C09;">
+                    الشاهين
+                </span>            </a> 
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="market.html">السوق</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="slideshow-container">
+        <div class="mySlides fade" style="background-image: url('./assets/hero.jpg');">
+            <div class="slide-overlay">
+                <div class="hero-text">
+                    <h1>الشاهين للزي الليبي العربي</h1>
+                    <p>أناقتك هنا تجدها لدى شاهين</p> <a href="market.html" class="btn-custom">اكتشف المجموعة</a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="mySlides fade" style="background-image: url('./assets/samples/s7.jpg');">
+            <div class="slide-overlay">
+                <div class="hero-text">
+                    <h1>حرفية يدوية وجودة لا مثيل لها</h1>
+                    <p>ملابس تحكي قصص الأجداد، بتفصيل عصري.</p>
+                    <a href="about.html" class="btn-custom">تعرف على قصتنا</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mySlides fade" style="background-image: url('./assets/samples/s5.jpg');">
+            <div class="slide-overlay">
+                <div class="hero-text">
+                    <h1>خدمات تفصيل وخياطة متكاملة</h1>
+                    <p>مقاسك المثالي، بلمسة من الأصالة الليبية.</p>
+                    <a href="services.html" class="btn-custom">اطلب خدمة مخصصة</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="featured-gallery">
+        <div class="container">
+            <h2 class="section-title">إبداعات الشاهين: لمسات من الأصالة</h2>
+            
+            <div class="product-grid">
+                
+                <div class="product-card" data-animation>
+                    <img src="./assets/samples/s1.jpg" alt="الفرملة الكلاسيكية">
+                    <div class="product-info">
+                        <p>حرفية يدوية وتطريز متقن.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-animation>
+                    <img src="./assets/samples/s2.jpg" alt="الجرد المطرز">
+                    <div class="product-info">
+                        <p>الأصالة الليبية في أبهى صورها.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-animation>
+                    <img src="./assets/samples/s3.jpg" alt="القميص التقليدي">
+                    <div class="product-info">
+                        <p>راحة وجودة للأناقة اليومية.</p>
+                    </div>
+                </div>
+    
+                <div class="product-card" data-animation>
+                    <img src="./assets/samples/s4.jpg" alt="الحولي الليبي">
+                    <div class="product-info">
+                        <p>أناقة خالدة بتصميم معاصر.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-animation>
+                    <img src="./assets/samples/s5.jpg" alt="الطاقية الليبية المطرزة">
+                    <div class="product-info">
+                        <p>لمسة تكميلية فاخرة ومميزة.</p>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-animation>
+                    <img src="./assets/samples/s6.jpg" alt="البدلة العربية المطرزة">
+                    <div class="product-info">
+                        <p>تفاصيل دقيقة تجعلك محط الأنظار.</p>
+                    </div>
+                </div>
+    
+                </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>الشاهين</h4> 
+                    <p>أناقتك هنا تجدها لدى شاهين - الوجهة المثالية للزي الليبي العربي الأصيل.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="market.html">تسوق الآن</a></li>
+                        <li><a href="about.html">قصتنا</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <p style="direction:rtl">info@shahincompany.ly</p>
+                    <p style="direction:ltr; text-align: right">+218 091-0528989</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>تابعنا</h4>
+                    <ul class="social-text-links">
+                        <li><a href="https://www.facebook.com/profile.php?id=61557039238831" target="_blank">فيسبوك</a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank">إنستغرام</a></li>
+                        <li><a href="https://www.tiktok.com/" target="_blank">تيك توك</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="currentYear"></span> الشاهين للزي الليبي العربي. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+        // ... (منطق عرض الشرائح والحركات)
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 5000); 
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const cards = document.querySelectorAll('.product-card[data-animation]');
+            
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

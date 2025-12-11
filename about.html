@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الشاهين | من نحن</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    
+    <style>
+        /* التنسيقات الخاصة بصفحة من نحن */
+        .about-section {
+            padding: 50px 0;
+        }
+        .story-container {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        .story-content {
+            flex: 1 1 500px;
+        }
+        .story-image {
+            flex: 1 1 300px;
+        }
+        .story-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .story-content h3 {
+            color: var(--dark-text);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            border-right: 4px solid var(--primary-color);
+            padding-right: 15px;
+        }
+        
+        /* القسم الجديد للقيم كبطاقات */
+        .values-grid {
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 40px 0; /* إزالة الخلفية من الشبكة نفسها والتركيز على البطاقة */
+        }
+        .value-card { /* تنسيق البطاقة الجديدة */
+            background-color: var(--light-text);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid var(--primary-color); /* خط علوي مميز */
+        }
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .value-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+        .value-card h4 {
+            color: var(--dark-text);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        .value-card p {
+            color: #666; /* نص رمادي ليكون مريحاً */
+        }
+
+        /* تنسيق الأزرار (مكرر لسهولة القراءة) */
+        .btn-custom {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 10px 25px;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        @media (max-width: 768px) {
+            .story-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .story-content h3 {
+                border-right: none;
+                border-bottom: 2px solid var(--primary-color);
+                padding-right: 0;
+                padding-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="./assets/images/logo.jpg" alt="شعار الشاهين" class="logo-img">
+                <span style="color: #E59C09;">
+                    الشاهين
+                </span>
+            </a> 
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" >الرئيسية</a></li>
+                <li><a href="market.html">السوق</a></li>
+                <li><a href="about.html" class="active">من نحن</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="about-section">
+        <div class="container">
+            <h2 class="section-title">قصة وراء كل قطعة</h2>
+            
+            <section class="story-container">
+                <div class="story-content">
+                    <h3>رحلة بدأت من قلب طرابلس</h3>
+                    <p>تأسست شركة 
+                        <b>الشاهين للزي الليبي العربي</b>
+                         على شغف عميق بالهوية الليبية وتقدير للحرفية التقليدية. منذ أجيال، كانت عائلتنا تعمل في مجال الخياطة والتطريز اليدوي لأرقى الملابس الرجالية. نحن نؤمن بأن كل فرملة وجرد هي قطعة فنية تحمل في طياتها تاريخاً غنياً. 
+                         <b>أناقتك هنا تجدها لدى شاهين</b>.
+                        </p>
+                    <p>هدفنا هو الحفاظ على هذه التقاليد العريقة وتقديمها للعالم بأعلى مستويات الجودة والأصالة، مع ضمان ملاءمتها للرجل العصري.</p>
+                    <p>نستخدم فقط الأقمشة الطبيعية والمواد الخام المستدامة، مما يضمن ليس فقط المظهر الفاخر بل والراحة المطلقة. انضم إلينا في رحلة إحياء التراث.</p>
+                </div>
+                <div class="story-image">
+                    <img src="./assets/about.jpg" alt="صورة تراث ليبي">
+                </div>
+            </section>
+
+            <h2 class="section-title" style="margin-top: 50px;">قيمنا الأساسية</h2>
+
+            <section class="values-grid">
+                
+                <div class="value-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h4>الأصالة</h4>
+                    <p>التزام مطلق بالتصاميم والأنماط التاريخية لملابسنا الليبية.</p>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-gem"></i>
+                    <h4>الجودة</h4>
+                    <p>استخدام أفضل الأقمشة والتقنيات اليدوية لضمان المتانة والدقة.</p>
+                </div>
+                
+                <div class="value-card">
+                    <i class="fas fa-leaf"></i>
+                    <h4>الاستدامة</h4>
+                    <p>العمل بمسؤولية لدعم الحرفيين المحليين والحفاظ على البيئة.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>الشاهين</h4> 
+                    <p>أناقتك هنا تجدها لدى شاهين - الوجهة المثالية للزي الليبي العربي الأصيل.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="market.html">تسوق الآن</a></li>
+                        <li><a href="about.html">قصتنا</a></li>
+                        <li><a href="services.html">خدماتنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <p style="direction:rtl">info@shahincompany.ly</p>
+                    <p style="direction:ltr; text-align: right">+218 091-0528989</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>تابعنا</h4>
+                    <ul class="social-text-links">
+                        <li><a href="https://www.facebook.com/profile.php?id=61557039238831" target="_blank">فيسبوك</a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank">إنستغرام</a></li>
+                        <li><a href="https://www.tiktok.com/" target="_blank">تيك توك</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="currentYear"></span> الشاهين للزي الليبي العربي. جميع الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
