@@ -200,6 +200,8 @@ body {
         box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
         z-index: 1000;
         padding-bottom: 10px;
+        gap: 40px;
+
     }
 
     .navbar .nav-links.active {
@@ -207,11 +209,28 @@ body {
     }
 
     .nav-links a {
-        margin-right: 0;
-        text-align: right;
-        /* تباعد القائمة في وضع الهاتف */
+        /* تم إلغاء الهامش الأفقي المخصص للديسكتوب */
+        margin-right: 0; 
+        
+        /* زيادة التباعد الرأسي لتحسين سهولة النقر (موبايل) */
         padding: 15px 20px; 
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        
+        /* ضمان محاذاة النص لليمين */
+        text-align: right; 
+        
+        /* إعادة تطبيق الألوان والانتقالات لضمان الأولوية */
+        color: var(--light-text);
+        text-decoration: none;
+        transition: color 0.3s, background-color 0.3s;
+        
+        /* إضافة خط فاصل لتحسين الفصل بين العناصر */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+        color: var(--primary-color); 
+        background-color: rgba(255, 255, 255, 0.1);
     }
     
     .menu-toggle {
